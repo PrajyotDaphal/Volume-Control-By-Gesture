@@ -5,8 +5,6 @@ from ctypes import cast, POINTER
 from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 import numpy as np
-import time
-from Listen import Listen
 
 def volume(): 
 
@@ -52,9 +50,9 @@ def volume():
  
         length = hypot(x2-x1,y2-y1) 
 
-        vol = np.interp(length,[0,200],[volMin,volMax]) 
-        volbar=np.interp(length,[0,200],[400,150])
-        volper=np.interp(length,[0,200],[0,100])
+        vol = np.interp(length,[0,200],[volMin,volMax]) # you can chage length as you wan't [0 , change] 
+        volbar=np.interp(length,[0,200],[400,150]) # Same length [0 , change] 
+        volper=np.interp(length,[0,200],[0,100]) #Same length [0 , change] 
         
         volume.SetMasterVolumeLevel(vol, None)
         
